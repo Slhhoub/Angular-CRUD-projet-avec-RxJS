@@ -1,0 +1,22 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "playerName": "salah eddine",
+      "email": "salah@gmail.com",
+      "gender": "M",
+      "selected": true,
+      "countryId": "1",
+      "countryName": "cameroun"
+    },
+    {
+      "id": 2,
+      "playerName": "omar chhoub",
+      "email": "omar@gmail.com",
+      "gender": "M",
+      "selected": false,
+      "countryId": "1",
+      "countryName": "maroc"
+    }
+  ]
+}

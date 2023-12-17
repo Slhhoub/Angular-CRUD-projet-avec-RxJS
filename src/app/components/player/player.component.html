@@ -1,0 +1,67 @@
+<nav class="navbar mt-5">
+  <div class="container-fluid">
+    <div class="">
+      <button type="button" class="btn btn-primary me-3 pointeur"  (click)="onGetAllPlayers()">All</button>
+      <button type="button" class="btn btn-outline-primary me-3 pointeur"  (click)="onGetAllPlayerSelected()">Selected</button>
+      <button type="button" class="btn btn-outline-primary pointeur" (click)="onNewPlayer()">New</button>
+    </div>
+    <form class="d-flex" #formControl="ngForm" (ngSubmit)="onSearch(formControl.value)">
+      <input class="form-control me-2" type="search" ngModel name="keyword" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+
+  </div>
+</nav>
+<div class="container mt-5">
+  <ng-container *ngIf="(playerObservbale$ | async) as state">
+    <ng-container [ngSwitch]="state.dataStateStatus">
+      <ng-container *ngSwitchCase="stateStatus.LOADING">
+        <button class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
+      </ng-container>
+      <ng-container *ngSwitchCase="stateStatus.ERROR">
+        <div class="alert alert-danger" role="alert">
+          {{ state.dataStateError }}
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="stateStatus.LOADED">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">playerName</th>
+              <th scope="col">email</th>
+              <th scope="col">selected</th>
+              <th scope="col">gender</th>
+              <th scope="col">country</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of state.dataState">
+              <th scope="row">{{ item.id }}</th>
+              <td>{{ item.playerName }}</td>
+              <td>{{ item.email }}</td>
+              <td>
+                <i *ngIf="item.selected" class="fa fa-check-square-o text-success"></i>
+
+              </td>
+              <td>{{ item.gender }}</td>
+              <td>{{ item.countryName }}</td>
+              <td>
+                <button class="btn sm btn-success" [ngClass]="item.selected?'btn-success':'btn-danger'" (click)="onChangeStatus(item)">{{ item.selected?'Selected':'Unselected' }}</button>
+              </td>
+              <td>
+                <button class="btn sm btn-success m-2" ><i class="fa fa-pencil"></i></button>
+                <button class="btn sm btn-danger m-2" (click)="onDelete(item)"><i class="fa fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>

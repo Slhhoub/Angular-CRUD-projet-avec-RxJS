@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="col-lg-6 m-auto shadow p-3 mb-5 bg-body rounded">
+    <form  #playerFormsController="ngForm" (submit)="onCreatePlayer(playerFormsController)">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Player Name</label>
+        <input type="text" class="form-control" name="playerName" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Gender : </label>
+        <input type="radio" value="M" class="form-check-input m-2" name="gender">
+        <label class="form-check-label">Male</label>
+        <input type="radio" value="F" class="form-check-input m-2" name="gender">
+        <label class="form-check-label">Female</label>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Selected </label>
+        <input type="checkbox" class="form-check-input m-2" name="selected">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Country</label>
+        <input type="text" class="form-control" name="playerName" >
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+</div>
