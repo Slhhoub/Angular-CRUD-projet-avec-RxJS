@@ -86,4 +86,8 @@ export class PlayerComponent implements OnInit{
   onNewPlayer(){
     this.router.navigateByUrl("NewPlayer");
   }
+
+  onEdit(p:Player){
+    this.router.navigateByUrl("EditPlayer/"+p.id);
+  }
 }

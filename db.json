@@ -1,22 +1,44 @@
 {
   "players": [
     {
-      "id": 1,
-      "playerName": "salah eddine",
-      "email": "salah@gmail.com",
+      "playerName": "ze",
+      "email": "admin@gmail.com",
       "gender": "M",
       "selected": true,
-      "countryId": "1",
-      "countryName": "cameroun"
+      "countryName": "jjjj",
+      "id": 3
     },
     {
-      "id": 2,
-      "playerName": "omar chhoub",
-      "email": "omar@gmail.com",
+      "playerName": "hh",
+      "email": "superAdmin@gmail.com",
       "gender": "M",
-      "selected": false,
-      "countryId": "1",
-      "countryName": "maroc"
+      "selected": true,
+      "countryName": "hh",
+      "id": 4
+    },
+    {
+      "playerName": "ze",
+      "email": "admin@gmail.com",
+      "gender": "M",
+      "selected": true,
+      "countryName": "jjjj",
+      "id": 5
+    },
+    {
+      "playerName": "ze",
+      "email": "admin@gmail.com",
+      "gender": "M",
+      "selected": true,
+      "countryName": "hhh",
+      "id": 6
+    },
+    {
+      "playerName": "k",
+      "email": "k@gmail.com",
+      "gender": "M",
+      "selected": true,
+      "countryName": "hh",
+      "id": 7
     }
   ]
 }

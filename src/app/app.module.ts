@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlayerComponent } from './components/player/player.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { NewPlayerComponent } from './components/new-player/new-player.component';
+import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 
 
 @NgModule({
@@ -15,13 +16,16 @@ import { NewPlayerComponent } from './components/new-player/new-player.component
     AppComponent,
     PlayerComponent,
     HomeComponent,
-    NewPlayerComponent
+    NewPlayerComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
 
 
   ],

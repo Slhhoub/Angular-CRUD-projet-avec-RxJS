@@ -31,4 +31,17 @@ export class PlayerService {
   ondelete(p:Player):Observable<any>{
     return this.http.delete<any>(`${environment.applink}/players/${p.id}`);
   }
+
+  savePlayer(playerForms:Player):Observable<Player>{
+    return this.http.post<Player>(`${environment.applink}/players/`,playerForms);
+  }
+
+  getPlayer(id:number):Observable<Player>{
+    return this.http.get<Player>(`${environment.applink}/players/${id}`);
+  }
+
+  updatePlayer(p:any){{
+    return this.http.put<Player>(`${environment.applink}/players/${p.id}`,p);
+  }
+}
 }

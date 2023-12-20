@@ -1,31 +1,32 @@
 <div class="container mt-5">
   <div class="col-lg-6 m-auto shadow p-3 mb-5 bg-body rounded">
-    <div *ngIf="createSuccess" class="alert alert-success" role="alert">
-      create player success 
+    <div *ngIf="updateSuccess" class="alert alert-success" role="alert">
+      update player success
     </div>
-    <form   [formGroup]="playerForms" (submit)="onCreatePlayer(playerForms.value)">
+    <form   [formGroup]="playerForms" (submit)="onUpdatePlayer(playerForms.value)">
+      <input hidden name="id" formControlName="id" >
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Player Name</label>
         <input type="text" class="form-control" name="playerName" formControlName="playerName" >
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" formControlName="email">
+        <input type="email" class="form-control" name="email" formControlName="email" >
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Gender : </label>
-        <input type="radio" value="M" class="form-check-input m-2" name="gender" formControlName="gender">
+        <input type="radio" value="M" class="form-check-input m-2" name="gender" formControlName="gender" >
         <label class="form-check-label">Male</label>
-        <input type="radio" value="F" class="form-check-input m-2" name="gender" formControlName="gender">
+        <input type="radio" value="F" class="form-check-input m-2" name="gender" formControlName="gender" >
         <label class="form-check-label">Female</label>
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Selected </label>
-        <input type="checkbox" class="form-check-input m-2" name="selected"  formControlName="selected">
+        <input type="checkbox" class="form-check-input m-2" name="selected"  formControlName="selected" >
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Country</label>
-        <input type="text" class="form-control" name="countryName" formControlName="countryName">
+        <input type="text" class="form-control" name="countryName" formControlName="countryName" >
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!playerForms.valid">Save</button>
     </form>
